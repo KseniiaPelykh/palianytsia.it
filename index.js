@@ -6,4 +6,4 @@ app.get('/', (req, res, next) => {
     res.send('Palianytsia!')
 })
 
-app.listen(3000)
+app.listen(process.env.PORT)
