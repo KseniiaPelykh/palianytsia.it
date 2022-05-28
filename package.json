@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/KseniiaPelykh/palianytsia.it#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "hjs": "^0.0.6",
+    "hogan-middleware": "^0.2.2"
   }
 }
