@@ -11,5 +11,4 @@ app.use(express.static(path.join(__dirname, 'public')))
 const indexRouter = require('./routes/index')
 app.use('/', indexRouter)
 
-//app.listen(process.env.PORT)
-app.listen(3000)
+app.listen(process.env.PORT)
