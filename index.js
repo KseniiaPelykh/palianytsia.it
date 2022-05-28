@@ -11,4 +11,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 const indexRouter = require('./routes/index')
 app.use('/', indexRouter)
 
+const studentRouter = require('./routes/students')
+app.use('/students', studentRouter)
+
 app.listen(process.env.PORT)
