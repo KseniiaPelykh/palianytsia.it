@@ -9,4 +9,8 @@ router.get('/pippo_pluto', (req, res, next) => {
     res.render('students/pippo-pluto', null)
 })
 
+router.get('/kseniia-pel', (req, res, next) => {
+    res.render('students/kseniia-pel', null)
+})
+
 module.exports = router
