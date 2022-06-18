@@ -9,6 +9,10 @@ router.get('/pippo_pluto', (req, res, next) => {
     res.render('students/pippo-pluto', null)
 })
 
+router.get('/rus_oras', (req, res, next) => {
+    res.render('students/rus_oras', null)
+})
+
 router.get('/BrainOut', (req, res, next) => {
     res.render('students/brain0ut', null)
 })
