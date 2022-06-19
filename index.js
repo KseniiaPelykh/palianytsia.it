@@ -1,17 +1,15 @@
 const express = require('express')
 const path = require('path')
-const hoganMiddleware = require('hogan-middleware')
 
 const app = express()
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'mustache')
-app.engine('mustache', hoganMiddleware.__express)
-app.use(express.static(path.join(__dirname, 'public')))
-
-const indexRouter = require('./routes/index')
-app.use('/', indexRouter)
+app.use(express.static(path.resolve(__dirname, './client/build')));
 
 const studentRouter = require('./routes/students')
-app.use('/students', studentRouter)
+app.use('/api/students', studentRouter)
 
-app.listen(process.env.PORT)
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
+});
+
+const PORT = process.env.PORT || 3002;
+app.listen(PORT)

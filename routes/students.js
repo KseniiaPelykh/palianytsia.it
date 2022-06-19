@@ -2,7 +2,16 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
-    res.render('students/list', null)
+    res.json(
+        {
+            students: [
+            {
+                name: "Олексій В."
+            },
+            {
+                name: "Руслан О."
+            }]
+        });
 })
 
 router.get('/pippo_pluto', (req, res, next) => {
