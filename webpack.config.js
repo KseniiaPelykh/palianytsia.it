@@ -28,8 +28,8 @@ module.exports = {
         ]
       },
       {
-         test: /\.svg$/,
-         use: 'file-loader'
+         test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
+         use: ['file-loader?name=[name].[ext]']
       }
     ]
   }
