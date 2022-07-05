@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development --hot && node index.js",
-    "start": "node index.js",
+    "dev": "webpack --mode development --hot && node ./server/index.js",
+    "start": "node ./server/index.js",
     "build": "webpack --mode production"
   },
   "repository": {

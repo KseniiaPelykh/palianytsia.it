@@ -1,4 +1,9 @@
 import React from "react";
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 
 const Students = () => {
   const [students, setStudents] = React.useState([]);
@@ -6,16 +11,30 @@ const Students = () => {
   React.useEffect(() => {
     fetch("/api/students")
       .then((res) => res.json())
-      .then((data) => setStudents(data.students));
+      .then((data) => setStudents(data));
   }, []);
 
-  console.log(students)
   return (
-    <div>
-      {/* <Container>
-          {students.map(student => <Row key={student.name}><Col><p>{student.name}</p></Col></Row>)}
-      </Container> */}
-    </div>
+  <Grid container spacing={4}>
+  {students.map(student => <Grid key={student.filename} item md={6} m={5}>
+      <Card sx={{ maxWidth: 400 }}>
+        <CardMedia
+          component="img"
+          height="250"
+          image={student.photo}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {student.name}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {student.description}
+          </Typography>
+        </CardContent>
+      </Card>
+    </Grid>
+  )}
+  </Grid>
   );
 }
 
