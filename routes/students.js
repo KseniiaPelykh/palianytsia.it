@@ -34,7 +34,7 @@ router.get('/kott', (req, res, next) => {
     res.render('students/kott', null)
 })
 
-router.get('/kott', (req, res, next) => {
+router.get('/MaksAnton', (req, res, next) => {
     res.render('students/MaksAnton', null)
 })
 
