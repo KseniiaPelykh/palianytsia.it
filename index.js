@@ -11,5 +11,5 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, './dist', 'index.html'));
 });
 
-const PORT = process.env.PORT || 5050;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT)

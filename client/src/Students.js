@@ -1,6 +1,4 @@
 import React from "react";
-import '../App.css';
-import {Container, Row, Col} from 'reactstrap';
 
 const Students = () => {
   const [students, setStudents] = React.useState([]);
@@ -11,11 +9,12 @@ const Students = () => {
       .then((data) => setStudents(data.students));
   }, []);
 
+  console.log(students)
   return (
     <div>
-      <Container>
+      {/* <Container>
           {students.map(student => <Row key={student.name}><Col><p>{student.name}</p></Col></Row>)}
-      </Container>
+      </Container> */}
     </div>
   );
 }
