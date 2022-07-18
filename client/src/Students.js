@@ -16,7 +16,7 @@ const Students = () => {
 
   return (
   <Grid container spacing={4}>
-  {students.map(student => <Grid key={student.filename} item md={6} m={5}>
+  {students.map(student => <Grid key={student.filename} item md={6}>
       <Card sx={{ maxWidth: 400 }}>
         <CardMedia
           component="img"
