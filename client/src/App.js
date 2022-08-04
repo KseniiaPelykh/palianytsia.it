@@ -16,14 +16,33 @@ function App() {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    funclick();
+  };
+
+
+  const funclick = function (){
+  const baseUrl = window.location.origin;
+  const tabs = document.querySelector('.MuiTabs-flexContainer'); 
+  const state = history.state;
+  tabs.addEventListener('click', tab => 
+    {
+      if (tab.target) 
+      {
+        const links = tab.target.getAttribute('link');
+        const newUrl = new URL(links, baseUrl);
+        history.pushState(state,'',newUrl);
+        
+      }
+    }
+  )
   };
 
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange}>
-          <Tab label="Home" {...a11yProps(0)} />
-          <Tab label="Students" {...a11yProps(1)} />
+          <Tab label="Home" {...a11yProps(0)} link = '/'  />
+          <Tab label="Students" {...a11yProps(1)} link = '/students'  />
         </Tabs>
       </Box>
       <Box m={5}>
