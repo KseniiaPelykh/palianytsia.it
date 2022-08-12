@@ -1,9 +1,10 @@
 import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
+import Tabs from '@mui/material/Tabs/';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Students from './Students';
+import PageLayout from './components/page'
 
 function a11yProps(index) {
   return {
@@ -38,6 +39,7 @@ function App() {
   };
 
   return (
+    <PageLayout>
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange}>
@@ -69,7 +71,8 @@ function App() {
         )}
         </div>
       </Box>
-    </Box>)
+    </Box>
+    </PageLayout>)
 }
 
 export default App;

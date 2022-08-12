@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack --mode development --hot && node ./server/index.js",
     "start": "node ./server/index.js",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "watch": "watch 'npm run dev' ./client"
   },
   "repository": {
     "type": "git",
@@ -21,13 +22,15 @@
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.8.7",
+    "@types/react": "^17.0.0",
     "express": "^4.18.1",
     "hjs": "^0.0.6",
     "hogan-middleware": "^0.2.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "@types/react": "^17.0.0"
+    "watch": "^1.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
