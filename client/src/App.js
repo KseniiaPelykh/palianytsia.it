@@ -1,10 +1,12 @@
 import * as React from 'react';
-import Tabs from '@mui/material/Tabs/';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Students from './Students';
 import PageLayout from './components/page'
+import MainPage from './components/main'
+import Students from './components/students'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function a11yProps(index) {
   return {
@@ -39,40 +41,18 @@ function App() {
   };
 
   return (
-    <PageLayout>
-    <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange}>
-          <Tab label="Home" {...a11yProps(0)} link = '/'  />
-          <Tab label="Students" {...a11yProps(1)} link = '/students'  />
-        </Tabs>
-      </Box>
-      <Box m={5}>
-        <div
-          role="tabpanel"
-          hidden={value !== 0}
-          id={`simple-tabpanel-${0}`}
-          aria-labelledby={`simple-tab-${0}`}
-        >
-          {value === 0 && (
-            <Typography>
-              Work in progress
-            </Typography>
-          )}
-        </div>
-        <div
-          role="tabpanel"
-          hidden={value !== 1}
-          id={`simple-tabpanel-${1}`}
-          aria-labelledby={`simple-tab-${1}`}
-        >
-        {value === 1 && (
-          <Students />
-        )}
-        </div>
-      </Box>
-    </Box>
-    </PageLayout>)
+      <Router>
+            <PageLayout>
+
+        <Routes>
+            <Route path="/" element={<MainPage />}></Route>
+            <Route path="/students" element={<Students />}></Route>
+        </Routes>
+        </PageLayout>
+
+      </Router>
+    
+  )
 }
 
 export default App;
