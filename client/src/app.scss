@@ -1,4 +1,16 @@
-@use "@material/tab-bar/mdc-tab-bar";
-@use "@material/tab-scroller/mdc-tab-scroller";
-@use "@material/tab-indicator/mdc-tab-indicator";
-@use "@material/tab/mdc-tab";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap');
+
+body {
+    margin: 0px !important;
+    font-family: 'Roboto', sans-serif;
+    line-height: 2rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
