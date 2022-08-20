@@ -18,8 +18,7 @@ import {
     Link
   } from "react-router-dom";
 
-const anchors = ['Intro', 'How we help', 'Requirement to join', 'Join as a student']
-const pages = {'Students': '/students', 'Team' : '/', 'News': '/' }
+const pages = {'Main': '/', 'Students': '/students', 'Team' : '/', 'News': '/' }
 
 const ResponsiveAppBar = () => {
   const [state, setState] = React.useState(false);
@@ -36,7 +35,7 @@ const ResponsiveAppBar = () => {
     <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <IconButton sx={{ display: { xs: 'flex', md: 'flex' } }}
+          <IconButton sx={{ display: { xs: 'flex', md: 'none' } }}
               size="large"
               aria-label=""
               aria-controls="menu-appbar"
@@ -57,18 +56,6 @@ const ResponsiveAppBar = () => {
                 onClick={toggleDrawer(false)}
                 onKeyDown={toggleDrawer(false)}
             >
-                <List sx={{ display: { xs: 'flex', md: 'none', flexDirection: 'column' } }}>
-                    {anchors.map((text, index) => (
-                        <Link key={`menu_link_top${index}`} to={'/'}>
-                            <ListItem key={text} disablePadding>
-                                <ListItemButton>
-                                <ListItemText primary={text} />
-                                </ListItemButton>
-                            </ListItem>
-                        </Link>
-                    ))}
-                </List>
-                <Divider sx={{ display: { md: 'none' } }}></Divider>
                 <List>
                     {Object.entries(pages).map(([key, value], index) => (
                     <Link to={value} key={`menu_link${index}`}>
@@ -83,15 +70,15 @@ const ResponsiveAppBar = () => {
             </Box>
           </Drawer>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'end' }}>
-            {anchors.map((anc, index) => (
-            <Link to={'/'} key={`link${index}`}>
-              <Button
-                key={anc}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {anc}
-              </Button>
-              </Link>
+            {Object.entries(pages).map(([key, value], index) => (
+                <Link to={value} key={`link${index}`}>
+                  <Button
+                    key={key}
+                    sx={{ my: 2, color: 'white', display: 'block' }}
+                  >
+                    {key}
+                  </Button>
+                </Link>
             ))}
           </Box>
 

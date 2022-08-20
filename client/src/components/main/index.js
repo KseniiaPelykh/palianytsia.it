@@ -3,13 +3,14 @@ import Page from '../../components/page'
 import Section from '../../components/section';
 import { Box, Typography, Title } from '@mui/material';
 import { Container } from '@mui/system';
+import Link from '@mui/material/Link';
 
 export const MainPage = ({children, ...props}) => {
     return (
         <React.Fragment>
             <Section>
                 <Box sx={{ bgcolor: '#cfe8fc', height: '70vh', display: 'table', width: '100vw', background: 'url(./images/bg.jpg)', backgroundSize: 'cover'}} disableGutters>
-                    <Box sx={{display: 'table-cell', verticalAlign: 'middle'}}>
+                    <Box sx={{display: 'table-cell', verticalAlign: 'middle', padding: '1rem'}}>
                         <Typography variant="h1" component="h2" textAlign="center" fontSize={'4rem'}>Free help with studing and finding a job in IT</Typography>
                     </Box>
                     
@@ -56,9 +57,14 @@ export const MainPage = ({children, ...props}) => {
             </Section>
             <Section>
                 <Box sx={{ paddingTop: '5rem' }} disableGutters>
-                    <Container maxWidth="md">
-                        <h2>Join as a student</h2>
-                        <button>Join</button>   
+                    <Container maxWidth="md" sx={{ textAlign: 'center' }}>
+                        <Link
+                            href="https://docs.google.com/forms/d/1ZsZFHxemI6tXo6s2TthtUtwYYq54WEGwdMulRK9ODd0"
+                            className="btn-join-in-section"
+                            target="blank"
+                        >
+                                Join as a student
+                        </Link>
                     </Container>
                 </Box>
             </Section>
