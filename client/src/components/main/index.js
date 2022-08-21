@@ -48,7 +48,7 @@ export const MainPage = ({children, ...props}) => {
                         <h2>Mentor requirements</h2>
                         <ul>
                             <li>Experience woking in big tech companies</li>
-                            <li>Motvation to help Ukrainians impacted by the war</li>
+                            <li>Motivation to help Ukrainians impacted by the war</li>
                             <li>Experience in python, node, javascript or react</li>
                         </ul>   
                     </Container>
