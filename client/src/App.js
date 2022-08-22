@@ -34,7 +34,6 @@ function App() {
         const links = tab.target.getAttribute('link');
         const newUrl = new URL(links, baseUrl);
         history.pushState(state,'',newUrl);
-        
       }
     }
   )
@@ -42,12 +41,11 @@ function App() {
 
   return (
       <Router>
-            <PageLayout>
-
-        <Routes>
-            <Route path="/" element={<MainPage />}></Route>
-            <Route path="/students" element={<Students />}></Route>
-        </Routes>
+        <PageLayout>
+            <Routes>
+                <Route path="/" element={<MainPage />}></Route>
+                <Route path="/students" element={<Students />}></Route>
+            </Routes>
         </PageLayout>
 
       </Router>

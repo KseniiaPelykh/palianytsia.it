@@ -14,3 +14,14 @@ a {
     text-decoration: none;
     color: black;
 }
+
+a.btn-join-in-section {
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+}
+
+a.btn-join-in-section:active {
+    background-color: #cbcbcb;
+    color: #000;
+}

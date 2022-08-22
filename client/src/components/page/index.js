@@ -16,7 +16,7 @@ const PageLayout = ({children, ...props}) => {
         <ThemeProvider theme={theme}>
             <ResponsiveAppBar>
             </ResponsiveAppBar>
-            <Box sx={{ paddingTop: { md: '68px', xs: '56px' },  }}>
+            <Box sx={{ paddingTop: { md: '68px', xs: '56px' }, paddingBottom: '40px' }}>
                 {children}
             </Box>
             
