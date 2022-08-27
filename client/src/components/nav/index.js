@@ -33,8 +33,17 @@ const ResponsiveAppBar = () => {
 
   return (
     <AppBar position="fixed">
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Toolbar disableGutters>
+          <IconButton sx={{ display: { xs: 'none', md: 'flex' } }}
+              size="large"
+              aria-label=""
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              color="inherit"
+            >
+              <img src="./images/logo_black.png" width="60px" />
+          </IconButton>
           <IconButton sx={{ display: { xs: 'flex', md: 'none' } }}
               size="large"
               aria-label=""
@@ -43,7 +52,7 @@ const ResponsiveAppBar = () => {
               onClick={toggleDrawer(true)}
               color="inherit"
             >
-              <MenuIcon />
+              <img src="./images/logo_black.png" width="60px" />
           </IconButton>
           <Drawer
             anchor='left'
