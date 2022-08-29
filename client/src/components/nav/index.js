@@ -13,14 +13,16 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import { useTranslate } from 'react-polyglot';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 import {
     Link
   } from "react-router-dom";
 
-const pages = {'Main': '/', 'Students': '/students', 'Team' : '/', 'News': '/' }
+const pages = {main: '/', students: '/students', team : '/', news: '/' }
 
-const ResponsiveAppBar = () => {
+const ResponsiveAppBar = (props) => {
   const [state, setState] = React.useState(false);
 
   const toggleDrawer = (open) => (event) => {
@@ -31,8 +33,16 @@ const ResponsiveAppBar = () => {
     setState(open);
   };
 
+  const menuOnClick = (e) =>{
+    const {ChangeLangOnClick} = props;
+    const lang = e.target.dataset["lang"];
+    ChangeLangOnClick(lang);
+  }
+
+  const t = useTranslate();
+
   return (
-    <AppBar position="fixed">
+    <AppBar position="fixed" id="appbar">
       <Container maxWidth="lg">
         <Toolbar disableGutters>
           <IconButton sx={{ display: { xs: 'none', md: 'flex' } }}
@@ -65,6 +75,10 @@ const ResponsiveAppBar = () => {
                 onClick={toggleDrawer(false)}
                 onKeyDown={toggleDrawer(false)}
             >
+                <ButtonGroup variant="text" aria-label="Choose language" id="language-select" onClick={menuOnClick}>
+                  <Button data-lang="en">EN</Button>
+                  <Button data-lang="ua">UA</Button>
+                </ButtonGroup>
                 <List>
                     {Object.entries(pages).map(([key, value], index) => (
                     <Link to={value} key={`menu_link${index}`}>
@@ -79,16 +93,21 @@ const ResponsiveAppBar = () => {
             </Box>
           </Drawer>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'end' }}>
+
             {Object.entries(pages).map(([key, value], index) => (
                 <Link to={value} key={`link${index}`}>
                   <Button
                     key={key}
                     sx={{ my: 2, color: 'white', display: 'block' }}
                   >
-                    {key}
+                    {t('menu.'+key)}
                   </Button>
                 </Link>
             ))}
+            <ButtonGroup variant="text" aria-label="Choose language" id="language-select" onClick={menuOnClick}>
+              <Button data-lang="en">EN</Button>
+              <Button data-lang="ua">UA</Button>
+            </ButtonGroup>
           </Box>
 
         </Toolbar>

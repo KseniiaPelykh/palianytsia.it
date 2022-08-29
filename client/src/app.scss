@@ -25,3 +25,14 @@ a.btn-join-in-section:active {
     background-color: #cbcbcb;
     color: #000;
 }
+
+#language-select {
+    margin-left: 3rem;
+    height:25px;
+}
+#language-select button{
+    color: #fff;
+}
+#language-select button:not(:last-of-type) {
+    border-right: 1px solid rgba(255, 255, 255, 0.23);
+}

@@ -4,14 +4,16 @@ import Section from '../../components/section';
 import { Box, Typography, Title } from '@mui/material';
 import { Container } from '@mui/system';
 import Link from '@mui/material/Link';
+import { useTranslate } from 'react-polyglot';
 
 export const MainPage = ({children, ...props}) => {
+    const t = useTranslate();
     return (
         <React.Fragment>
             <Section>
                 <Box sx={{ bgcolor: '#cfe8fc', height: '70vh', display: 'table', width: '100vw', background: 'url(./images/bg.jpg)', backgroundSize: 'cover'}} disableGutters>
                     <Box sx={{display: 'table-cell', verticalAlign: 'middle', padding: '1rem'}} maxWidth="lg">
-                        <Typography variant="h1" component="h2" textAlign="center" fontSize={'4rem'}>Free help with studying and finding a job in IT</Typography>
+                        <Typography variant="h1" component="h2" textAlign="center" fontSize={'4rem'}>{t('mainTitle')}</Typography>
                     </Box>
                     
                 </Box>
@@ -19,13 +21,12 @@ export const MainPage = ({children, ...props}) => {
             <Section>
                 <Box sx={{ paddingTop: '5rem' }} disableGutters>
                     <Container maxWidth="md">
-                        <h2>How we help</h2>
+                        <h2>{t('help.title')}</h2>
                         <ul>
-                            <li>Face to face consultation with en experienced IT professional about your interest 
-                                (working in is very diverse, there are different roles and technologies you can work with)</li>
-                            <li>Personalized program of online cources and assistanse in passing them</li>
-                            <li>Help with resume and profile on LinkedIn</li>
-                            <li>Work in joint project using modern tools for teamwork</li>
+                            <li>{t('help.text.line_1')}</li>
+                            <li>{t('help.text.line_2')}</li>
+                            <li>{t('help.text.line_3')}</li>
+                            <li>{t('help.text.line_4')}</li>
                         </ul>   
                     </Container>
                     
@@ -46,11 +47,13 @@ export const MainPage = ({children, ...props}) => {
             <Section>
                 <Box sx={{ paddingTop: '5rem' }} disableGutters>
                     <Container maxWidth="md">
-                        <h2>Mentor requirements</h2>
+                        <h2>{t('contributors.title')}</h2>
+                        <p>{t('contributors.text')}</p>
                         <ul>
-                            <li>Experience woking in big tech companies</li>
-                            <li>Motivation to help Ukrainians impacted by the war</li>
-                            <li>Experience in python, node, javascript or react</li>
+                            <li>{t('contributors.ul_1')}</li>
+                            <li>{t('contributors.ul_2')}</li>
+                            <li>{t('contributors.ul_3')}</li>
+                            <li>{t('contributors.ul_4')}</li>
                         </ul>   
                     </Container>
                 </Box>
@@ -63,7 +66,7 @@ export const MainPage = ({children, ...props}) => {
                             className="btn-join-in-section"
                             target="blank"
                         >
-                                Join as a student
+                                {t('joinButton')}
                         </Link>
                     </Container>
                 </Box>
