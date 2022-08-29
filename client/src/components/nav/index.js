@@ -75,7 +75,7 @@ const ResponsiveAppBar = (props) => {
                 onClick={toggleDrawer(false)}
                 onKeyDown={toggleDrawer(false)}
             >
-                <ButtonGroup variant="text" aria-label="Choose language" id="language-select" onClick={menuOnClick}>
+                <ButtonGroup variant="text" aria-label="Choose language" id="language-select-mobile" onClick={menuOnClick}>
                   <Button data-lang="en">EN</Button>
                   <Button data-lang="ua">UA</Button>
                 </ButtonGroup>
@@ -84,7 +84,7 @@ const ResponsiveAppBar = (props) => {
                     <Link to={value} key={`menu_link${index}`}>
                         <ListItem disablePadding>
                             <ListItemButton>
-                            <ListItemText primary={key} />
+                            <ListItemText primary={t('menu.'+key)} />
                             </ListItemButton>
                         </ListItem>
                     </Link>
