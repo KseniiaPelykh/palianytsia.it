@@ -10,8 +10,8 @@ export const MainPage = ({children, ...props}) => {
         <React.Fragment>
             <Section>
                 <Box sx={{ bgcolor: '#cfe8fc', height: '70vh', display: 'table', width: '100vw', background: 'url(./images/bg.jpg)', backgroundSize: 'cover'}} disableGutters>
-                    <Box sx={{display: 'table-cell', verticalAlign: 'middle', padding: '1rem'}}>
-                        <Typography variant="h1" component="h2" textAlign="center" fontSize={'4rem'}>Free help with studing and finding a job in IT</Typography>
+                    <Box sx={{display: 'table-cell', verticalAlign: 'middle', padding: '1rem'}} maxWidth="lg">
+                        <Typography variant="h1" component="h2" textAlign="center" fontSize={'4rem'}>Free help with studying and finding a job in IT</Typography>
                     </Box>
                     
                 </Box>
