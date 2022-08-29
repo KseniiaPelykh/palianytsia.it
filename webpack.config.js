@@ -3,7 +3,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const path = require('path');
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: './client/public/index.html',
+  template: './client/src/index.html',
   filename: './index.html'
 });
 
@@ -14,7 +14,7 @@ module.exports = [{
     filename: '[name].js'
   },
   plugins: [htmlPlugin, new CopyWebpackPlugin({patterns: [
-    { from: './client/src/images', to: './images' }]})],
+    { from: './client/src/images', to: './images' }, {from: './client/public', to: './'}]})],
   module: {
     rules: [
       {
