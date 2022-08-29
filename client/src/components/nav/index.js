@@ -7,6 +7,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Drawer from '@mui/material/Drawer';
+import Typography from '@mui/material/Typography';
 
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
@@ -54,6 +55,9 @@ const ResponsiveAppBar = () => {
             >
               <img src="./images/logo_black.png" width="60px" />
           </IconButton>
+          <Typography size="large">
+            Palianytsia IT
+          </Typography>
           <Drawer
             anchor='left'
             open={state}
