@@ -4,7 +4,6 @@ import MainPage from './components/main'
 import Students from './components/students'
 import { I18n } from 'react-polyglot';
 
-
 import {
   BrowserRouter as Router,
   Routes,
@@ -17,6 +16,7 @@ function a11yProps(index) {
     'aria-controls': `simple-tabpanel-${index}`,
   };
 }
+
 function App() {
   const [locale, setLocale] = React.useState('en');
 
@@ -30,8 +30,7 @@ function App() {
         },
         mainTitle: 'Безкоштовна допомога з навчанням і пошуком роботи в ІТ',
         contributors: {
-            title: 'Contribute',
-            text: 'Якщо ви хочете нам домогти:',
+            title: 'Я хочу допомогти',
             ul_1: 'Якщо ви досвідчений IT спеціаліст, ви можете приєднатися до нас як ментор.',
             ul_2: "Поділіться своїми знаннями ІТ з нашими студентами – ми шукаємо людей, які можуть зробити 30-хвилинну презентацію на загальні теми пов'язані з IT або про Git, GitHub, Heroku, Python, NodeJs, JavaScript, React.",
             ul_3: 'Якщо ви дизайнер або програміст, ви можете допомогти з роботою над веб-сайтом.',
@@ -47,7 +46,6 @@ function App() {
             }
         },
         joinButton: 'Долучитись як студент'
-
     },
     en: {
         menu: {
@@ -59,7 +57,6 @@ function App() {
         mainTitle: 'Free help with studying and finding a job in IT',
         contributors: {
             title: 'Contribute',
-            text: 'If case you want to contribute, there are different ways you can help us:',
             ul_1: 'In case you’re an experienced software engineer, you can join us as a mentor',
             ul_2: 'You can share your IT knowledge with our students - we’re looking for someone you can do a 30-minute presentation on general software engineering topics or usage of Git, GitHub, Heroku, Python, NodeJs, JavaScript, React specifically.',
             ul_3: 'If you are a designer or a software engineer you can help us build our website and other tools we need.',
@@ -76,18 +73,16 @@ function App() {
         },
         joinButton: 'Join as a student'
     }
-
   }
 
-
   return (
-  <I18n locale={locale} messages={phrases[locale]}>
-    <Router>
-      <PageLayout setLocaleCallback={setLocale} >
-        <Routes>
+    <I18n locale={locale} messages={phrases[locale]}>
+      <Router>
+        <PageLayout setLocaleCallback={setLocale} >
+          <Routes>
             <Route path="/" element={<MainPage />}></Route>
             <Route path="/students" element={<Students />}></Route>
-        </Routes>
+          </Routes>
         </PageLayout>
       </Router>
     </I18n>

@@ -51,8 +51,7 @@ const ResponsiveAppBar = (props) => {
               aria-label=""
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              color="inherit"
-            >
+              color="inherit">
               <img src="./images/logo_black.png" width="60px" />
           </IconButton>
           <IconButton sx={{ display: { xs: 'flex', md: 'none' } }}
@@ -61,8 +60,7 @@ const ResponsiveAppBar = (props) => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={toggleDrawer(true)}
-              color="inherit"
-            >
+              color="inherit">
               <img src="./images/logo_black.png" width="60px" />
           </IconButton>
           <Typography size="large">
@@ -71,14 +69,12 @@ const ResponsiveAppBar = (props) => {
           <Drawer
             anchor='left'
             open={state}
-            onClose={toggleDrawer(false)}
-          >
+            onClose={toggleDrawer(false)}>
             <Box
                 sx={{ width: 250 }}
                 role="presentation"
                 onClick={toggleDrawer(false)}
-                onKeyDown={toggleDrawer(false)}
-            >
+                onKeyDown={toggleDrawer(false)}>
                 <ButtonGroup variant="text" aria-label="Choose language" id="language-select-mobile" onClick={menuOnClick}>
                   <Button data-lang="en">EN</Button>
                   <Button data-lang="ua">UA</Button>
@@ -97,13 +93,11 @@ const ResponsiveAppBar = (props) => {
             </Box>
           </Drawer>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'end' }}>
-
             {Object.entries(pages).map(([key, value], index) => (
                 <Link to={value} key={`link${index}`}>
                   <Button
                     key={key}
-                    sx={{ my: 2, color: 'white', display: 'block' }}
-                  >
+                    sx={{ my: 2, color: 'white', display: 'block' }}>
                     {t('menu.'+key)}
                   </Button>
                 </Link>
@@ -113,7 +107,6 @@ const ResponsiveAppBar = (props) => {
               <Button data-lang="ua">UA</Button>
             </ButtonGroup>
           </Box>
-
         </Toolbar>
       </Container>
     </AppBar>

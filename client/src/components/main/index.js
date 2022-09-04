@@ -15,7 +15,7 @@ export const MainPage = ({children, ...props}) => {
                     <Box sx={{display: 'table-cell', verticalAlign: 'middle', padding: '1rem'}} maxWidth="lg">
                         <Typography variant="h1" component="h2" textAlign="center" fontSize={'4rem'}>{t('mainTitle')}</Typography>
                     </Box>
-                    
+
                 </Box>
             </Section>
             <Section>
@@ -27,9 +27,9 @@ export const MainPage = ({children, ...props}) => {
                             <li>{t('help.text.line_2')}</li>
                             <li>{t('help.text.line_3')}</li>
                             <li>{t('help.text.line_4')}</li>
-                        </ul>   
+                        </ul>
                     </Container>
-                    
+
                 </Box>
             </Section>
             <Section>
@@ -40,7 +40,7 @@ export const MainPage = ({children, ...props}) => {
                             <li>18+</li>
                             <li>Ukrainians impacted by the war</li>
                             <li>No money to pay for the same service</li>
-                        </ul>   
+                        </ul>
                     </Container>
                 </Box>
             </Section>
@@ -48,13 +48,12 @@ export const MainPage = ({children, ...props}) => {
                 <Box sx={{ paddingTop: '5rem' }} disableGutters>
                     <Container maxWidth="md">
                         <h2>{t('contributors.title')}</h2>
-                        <p>{t('contributors.text')}</p>
                         <ul>
                             <li>{t('contributors.ul_1')}</li>
                             <li>{t('contributors.ul_2')}</li>
                             <li>{t('contributors.ul_3')}</li>
                             <li>{t('contributors.ul_4')}</li>
-                        </ul>   
+                        </ul>
                     </Container>
                 </Box>
             </Section>

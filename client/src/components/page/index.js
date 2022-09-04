@@ -24,7 +24,6 @@ const PageLayout = ({children, ...props}) => {
             <Box sx={{ paddingTop: { md: '68px', xs: '56px' }, paddingBottom: '40px' }} >
                 {children}
             </Box>
-            
         </ThemeProvider>
     )
 }
