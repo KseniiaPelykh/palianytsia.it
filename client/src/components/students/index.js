@@ -6,10 +6,11 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box'
 import { Container } from '@mui/system';
-
+import { useTranslate } from 'react-polyglot';
 
 const Students = () => {
   const [students, setStudents] = React.useState([]);
+  const t = useTranslate();
 
   React.useEffect(() => {
     fetch("/api/students")
@@ -20,7 +21,7 @@ const Students = () => {
   return (
     <Box>
         <Container maxWidth="md">
-            <h2>Students</h2>
+            <h2>{t('students')}</h2>
             <Grid container spacing={4} paddingBottom={4}>
             {students.map(student => <Grid key={student.filename} item md={6}>
                 <Card sx={{ maxWidth: 400 }}>

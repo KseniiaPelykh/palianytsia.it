@@ -15,7 +15,6 @@ export const MainPage = ({children, ...props}) => {
                     <Box sx={{display: 'table-cell', verticalAlign: 'middle', padding: '1rem'}} maxWidth="lg">
                         <Typography variant="h1" component="h2" textAlign="center" fontSize={'4rem'}>{t('mainTitle')}</Typography>
                     </Box>
-
                 </Box>
             </Section>
             <Section>
@@ -29,7 +28,6 @@ export const MainPage = ({children, ...props}) => {
                             <li>{t('help.text.line_4')}</li>
                         </ul>
                     </Container>
-
                 </Box>
             </Section>
             <Section>
@@ -63,8 +61,7 @@ export const MainPage = ({children, ...props}) => {
                         <Link
                             href="https://docs.google.com/forms/d/1ZsZFHxemI6tXo6s2TthtUtwYYq54WEGwdMulRK9ODd0"
                             className="btn-join-in-section"
-                            target="blank"
-                        >
+                            target="blank">
                                 {t('joinButton')}
                         </Link>
                     </Container>

@@ -51,7 +51,8 @@ function App() {
                 line_4: 'Робота над спільними проєктами використовуючи сучасні інструменти для командної роботи.'
             }
         },
-        joinButton: 'Долучитись як студент'
+        joinButton: 'Долучитись як студент',
+        students: 'Студенти'
     },
     en: {
         menu: {
@@ -83,7 +84,8 @@ function App() {
                 line_4: 'Work on joint projects using modern tools for teamwork.'
             }
         },
-        joinButton: 'Join as a student'
+        joinButton: 'Join as a student',
+        students: 'Students'
     }
   }
 
