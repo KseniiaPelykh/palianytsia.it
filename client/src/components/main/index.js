@@ -35,11 +35,11 @@ export const MainPage = ({children, ...props}) => {
             <Section>
                 <Box sx={{ paddingTop: '5rem' }} disableGutters>
                     <Container maxWidth="md">
-                        <h2>Student requirements</h2>
+                        <h2>{t('studentRequirments.title')}</h2>
                         <ul>
-                            <li>18+</li>
-                            <li>Ukrainians impacted by the war</li>
-                            <li>No money to pay for the same service</li>
+                            <li>{t('studentRequirments.ul_1')}</li>
+                            <li>{t('studentRequirments.ul_2')}</li>
+                            <li>{t('studentRequirments.ul_3')}</li>
                         </ul>
                     </Container>
                 </Box>
