@@ -18,7 +18,7 @@ function a11yProps(index) {
 }
 
 function App() {
-  const [locale, setLocale] = React.useState('en');
+  const [locale, setLocale] = React.useState('ua');
 
   const phrases = {
     ua: {
