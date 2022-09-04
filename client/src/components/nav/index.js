@@ -21,7 +21,7 @@ import {
     Link
   } from "react-router-dom";
 
-const pages = {main: '/', students: '/students', team : '/', news: '/' }
+const pages = {main: '/', students: '/students', /* team : '/', news: '/' */}
 
 const ResponsiveAppBar = (props) => {
   const [state, setState] = React.useState(false);
@@ -75,10 +75,10 @@ const ResponsiveAppBar = (props) => {
                 role="presentation"
                 onClick={toggleDrawer(false)}
                 onKeyDown={toggleDrawer(false)}>
-                <ButtonGroup variant="text" aria-label="Choose language" id="language-select-mobile" onClick={menuOnClick}>
+                {/* <ButtonGroup variant="text" aria-label="Choose language" id="language-select-mobile" onClick={menuOnClick}>
                   <Button data-lang="en">EN</Button>
                   <Button data-lang="ua">UA</Button>
-                </ButtonGroup>
+                </ButtonGroup> */}
                 <List>
                     {Object.entries(pages).map(([key, value], index) => (
                     <Link to={value} key={`menu_link${index}`}>
@@ -102,10 +102,10 @@ const ResponsiveAppBar = (props) => {
                   </Button>
                 </Link>
             ))}
-            <ButtonGroup variant="text" aria-label="Choose language" id="language-select" onClick={menuOnClick}>
+            {/* <ButtonGroup variant="text" aria-label="Choose language" id="language-select" onClick={menuOnClick}>
               <Button data-lang="en">EN</Button>
               <Button data-lang="ua">UA</Button>
-            </ButtonGroup>
+            </ButtonGroup> */}
           </Box>
         </Toolbar>
       </Container>
